@@ -4,11 +4,12 @@ import 'package:flutter_task/Core/constants/text.dart';
 
 import '../../../res/assets.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class WebAppBar extends StatelessWidget {
+  const WebAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: [
         Padding(

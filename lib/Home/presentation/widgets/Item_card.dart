@@ -9,159 +9,190 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          color: Color(0xff262626),
-        ),
-        width: 240,
-        height: 322,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        child: Stack(
-          children: [
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: Image.asset(Assets.testImage),
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              child: Container(
-                height: 190,
-                width: 240,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xff262626).withValues(alpha: 0.4),
-                      spreadRadius: 0,
-                      blurRadius: 10,
-                      offset: const Offset(0, -10),
-                    ),
-                  ],
-                  gradient: const LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.transparent,
-                      Color(0xff262626),
-                    ],
-                    stops: [0, .15],
+    return LayoutBuilder(builder: (context, constraints) {
+      return Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            color: Color(0xff262626),
+          ),
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Stack(
+            children: [
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
                   ),
-                  borderRadius:
-                      BorderRadius.vertical(bottom: Radius.circular(8)),
+                  width: double.infinity,
+                  height: constraints.maxHeight * .56,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: Image.asset(
+                    Assets.testImage,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          border: Border.all(color: Color(0xffC25F30)),
-                          color: Color(0xffC25F30).withValues(alpha: 0.1),
+              ),
+              Positioned(
+                bottom: 0,
+                left: 0,
+                right: 0,
+                child: Container(
+                  width: double.infinity,
+                  height: constraints.maxHeight * .56,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xff171717).withValues(alpha: 0.4),
+                        spreadRadius: 0,
+                        blurRadius: 4,
+                        offset: const Offset(0, -4),
+                      ),
+                    ],
+                    gradient: const LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Color(0xff171717),
+                      ],
+                      stops: [0, .1],
+                    ),
+                    borderRadius:
+                        BorderRadius.vertical(bottom: Radius.circular(8)),
+                  ),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15.0, vertical: 8),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: constraints.maxHeight * .043,
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            border: Border.all(color: Color(0xffC25F30)),
+                            color: Color(0xffC25F30).withValues(alpha: 0.1),
+                          ),
+                            height: constraints.maxHeight * .087,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 12.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                TextBody14(
+                                  'Pending Approval',
+                                  color: Colors.white,
+                                ),
+                                Icon(Icons.keyboard_arrow_down_rounded,
+                                    color: Colors.white),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: constraints.maxHeight * .049,
+                        ),
+                        SizedBox(
+                          height: constraints.maxHeight * .081,
+                          child: TextTitle(
+                            'Item title',
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(
+                          height: constraints.maxHeight * .019,
+                        ),
+                        SizedBox(
+                            height: constraints.maxHeight * .056,
                           child: Row(
-                            mainAxisSize: MainAxisSize.min,
                             children: [
-                              TextBody14(
-                                'Pending Approval',
-                                color: Colors.white,
+                              Image.asset(Assets.calendar),
+                              SizedBox(
+                                width: 8,
                               ),
-                              Icon(Icons.keyboard_arrow_down_rounded,
-                                  color: Colors.white),
+                              TextDescription(
+                                '5 Nights (Jan 16 - Jan 20, 2024) ',
+                                color: Color(0xff999999),
+                              ),
                             ],
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 24,
-                      ),
-                      TextTitle(
-                        'Item title',
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(Assets.calendar),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          TextDescription(
-                            '5 Nights (Jan 16 - Jan 20, 2024) ',
-                            color: Color(0xff999999),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 16),
-                      Container(
-                        height: .2,
-                        width: double.infinity,
-                        color: Color(0xff999999),
-                      ),
-                      SizedBox(height: 16),
-                      Row(
-                        children: [
-                          Stack(
+                        SizedBox(
+                          height: constraints.maxHeight * .037,
+                        ),
+                        Container(
+                          height: .2,
+                          width: double.infinity,
+                          color: Color(0xff999999),
+                        ),
+                        SizedBox(
+                          height: constraints.maxHeight * .037,
+                        ),
+                        SizedBox(
+                          height: constraints.maxHeight * .0745,
+                          child: Row(
                             children: [
                               ...List.generate(
-                                6,
-                                (index) {
-                                  print(index * 12);
-                                  return Padding(
-                                    padding: EdgeInsets.only(
-                                        left: index < 4 ? (index * 12 ): 0),
-                                    child: Container(
-                                      height: 24,
-                                      width: 24,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Color(0xff262626),
-                                      ),
+                                4,
+                                (index) => Align(
+                                  widthFactor: .5,
+                                  child: CircleAvatar(
+                                    radius: 13,
+                                    backgroundColor: Color(0xff262626),
+                                    child: CircleAvatar(
+                                      radius: 12,
+                                      backgroundColor: Color(0xff262626),
+                                      backgroundImage: index == 3
+                                          ? null
+                                          : const AssetImage(Assets.avatar),
                                       child: index == 3
-                                          ? Center(
-                                              child: TextBody12(
-                                                '+${6 - 3}',
-                                                color: mainColor,
-                                              ),
+                                          ? TextDescription(
+                                              '+${6 - 3}',
+                                              color: mainColor,
                                             )
-                                          : Image.asset(Assets.avatar,height: 22,
-                                        width: 22,),
+                                          : null,
                                     ),
-                                  );
-                                },
+                                  ),
+                                ),
+                              ),
+                              Spacer(),
+                              TextBody12(
+                                '4 unfinished tasks',
+                                color: Color(0xff999999),
                               )
                             ],
-                          )
-                        ],
-                      ),
-                    ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            Positioned(
-                top: 0,
-                right: 0,
-                child: Icon(
-                  Icons.abc,
-                  color: Colors.red,
-                )),
-          ],
-        ));
+              Positioned(
+                top: 8,
+                right: 8,
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.black38,
+                  ),
+                  height: 32,
+                  width: 32,
+                  child: Icon(
+                    Icons.more_horiz_rounded,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ));
+    });
   }
 }
