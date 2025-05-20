@@ -27,7 +27,7 @@ class ItemCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   width: double.infinity,
-                  height: constraints.maxHeight * .56,
+                  height: constraints.maxHeight * .6,
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   child: Image.asset(
                     Assets.testImage,
@@ -41,7 +41,7 @@ class ItemCard extends StatelessWidget {
                 right: 0,
                 child: Container(
                   width: double.infinity,
-                  height: constraints.maxHeight * .56,
+                  height: constraints.maxHeight * .52,
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -70,9 +70,9 @@ class ItemCard extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: constraints.maxHeight * .043,
-                        ),
+                        // SizedBox(
+                        //   height: constraints.maxHeight * .043,
+                        // ),
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
@@ -103,6 +103,7 @@ class ItemCard extends StatelessWidget {
                           height: constraints.maxHeight * .081,
                           child: TextTitle(
                             'Item title',
+                            fontSize: 20,
                             color: Colors.white,
                           ),
                         ),
@@ -115,7 +116,7 @@ class ItemCard extends StatelessWidget {
                             children: [
                               Image.asset(Assets.calendar),
                               SizedBox(
-                                width: 8,
+                                width: constraints.maxWidth * .0012,
                               ),
                               TextDescription(
                                 '5 Nights (Jan 16 - Jan 20, 2024) ',

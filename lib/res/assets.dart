@@ -3,6 +3,7 @@ class Assets {
   static const String avatar = 'assets/images/avatar.png';
   static const String testImage = 'assets/images/testImage.png';
   static const String calendar = 'assets/icons/calendar.png';
+  static const String sliders = 'assets/icons/sliders.png';
   static const String setting = 'assets/icons/settings.svg';
   static const String notification = 'assets/icons/notification.svg';
 }

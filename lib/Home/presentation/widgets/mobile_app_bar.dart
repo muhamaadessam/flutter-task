@@ -12,7 +12,7 @@ class MobileAppBar extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all( 16),
+          padding: const EdgeInsets.symmetric(vertical:  16,horizontal: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
