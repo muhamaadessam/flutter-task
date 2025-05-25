@@ -105,12 +105,12 @@ class HomeScreen extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: isWeb ? 80 : 16),
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                        maxCrossAxisExtent: 322,
-                        childAspectRatio: .755,
-                        mainAxisSpacing: 20,
+                        maxCrossAxisExtent:isWeb? 322:400,
+                        childAspectRatio: constraints.maxWidth > 391 ? .8:1.09,
+                        mainAxisSpacing: 16,
                         crossAxisSpacing: 16,
                       ),
-                      itemCount: 20,
+                      itemCount: 8,
                       itemBuilder: (BuildContext context, int index) =>
                           const ItemCard(),
                     );

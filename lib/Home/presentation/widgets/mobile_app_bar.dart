@@ -20,7 +20,7 @@ class MobileAppBar extends StatelessWidget {
               Icon(Icons.menu, color: Colors.white),
               const SizedBox(width: 12),
 
-              SvgPicture.asset(Assets.logo),
+              SvgPicture.asset(Assets.logo,height: 40,),
               const Spacer(),
               Row(
                 children: [

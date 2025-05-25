@@ -70,9 +70,6 @@ class ItemCard extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // SizedBox(
-                        //   height: constraints.maxHeight * .043,
-                        // ),
                         Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
@@ -97,13 +94,13 @@ class ItemCard extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          height: constraints.maxHeight * .049,
+                          height: constraints.maxHeight * .045,
                         ),
                         SizedBox(
-                          height: constraints.maxHeight * .081,
+                          height: constraints.maxHeight * .083,
                           child: TextTitle(
                             'Item title',
-                            fontSize: 20,
+                            fontSize: 18,
                             color: Colors.white,
                           ),
                         ),
